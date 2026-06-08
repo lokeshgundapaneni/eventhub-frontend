@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Main Container & Rounded Back Button 
+   ========================================================================== */
+.event-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  position: relative;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+
+/* Rounded Back Button */
+.round-back-btn {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+}
+
+.round-back-btn:hover {
+  transform: scale(1.08);
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  color: #1f2937;
+}
+
+/* ==========================================================================
+   BookMyShow Immersive Hero Layout (Protected Component Namespace)
+   ========================================================================== */
+.details-hero {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a202c;
+  color: #ffffff;
+  padding: 24px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Blurred Banner Backdrop Effect */
+.details-hero-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(25px) brightness(0.35);
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.details-hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.details-hero-img-wrapper {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.details-hero-main-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+}
+
+.details-hero-img-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-hero-text-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details-hero-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.details-badge-cat {
+  background: rgba(37, 99, 235, 0.2);
+  border: 1px solid #3b82f6;
+  color: #60a5fa;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.details-badge-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.details-badge-status.active { background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #34d399; }
+.details-badge-status.completed { background: rgba(156, 163, 175, 0.2); border: 1px solid #9ca3af; color: #d1d5db; }
+.details-badge-status.cancelled { background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #f87171; }
+
+.details-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.details-organizer {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin: 0 0 20px 0;
+}
+
+.details-organizer span {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.details-hero-quick-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Amazon Split Content Layout 
+   ========================================================================== */
+.details-main-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.info-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+
+.info-section h3 {
+  font-size: 1.2rem;
+  margin: 0 0 12px 0;
+  color: #111827;
+}
+
+.description-text {
+  font-size: 0.98rem;
+  color: #4b5563;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.venue-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.venue-icon {
+  font-size: 1.5rem;
+  background: #f3f4f6;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.venue-card h4 {
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+
+.venue-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+/* Amazon Style Sticky Purchase Box */
+.booking-widget {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 20px;
+  position: static;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.widget-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-label {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.widget-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.widget-divider {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 16px 0;
+}
+
+.seats-available {
+  font-size: 0.92rem;
+  color: #047857;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.seats-available span {
+  color: #b91c1c;
+}
+
+.seats-unavailable {
+  font-size: 0.92rem;
+  color: #b91c1c;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.widget-booking-btn {
+  width: 100%;
+  background: #fcd34d;
+  border: 1px solid #f59e0b;
+  color: #111827;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.widget-booking-btn:hover:not(:disabled) {
+  background: #f59e0b;
+}
+
+.widget-booking-btn:disabled {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Helper Statuses */
+.details-loading { text-align: center; font-size: 1.2rem; color: #4b5563; padding: 80px 0; }
+.details-error { text-align: center; color: #ef4444; padding: 40px 0; font-size: 1.1rem; }
+
+/* ==========================================================================
+   Media Queries for Tablet & Larger Responsive Grid Layouts
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .event-details-container {
+    padding: 24px;
+  }
+
+  .round-back-btn {
+    top: 40px;
+    left: 40px;
+  }
+
+  .details-hero {
+    margin-top: 0;
+    padding: 40px;
+  }
+
+  .details-hero-content {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .details-hero-img-wrapper {
+    flex-shrink: 0;
+    width: 240px;
+  }
+
+  .details-title {
+    font-size: 2.5rem;
+  }
+
+  .details-hero-quick-meta {
+    flex-direction: row;
+    gap: 24px;
+    align-self: flex-start;
+  }
+
+  .details-main-layout {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    gap: 32px;
+  }
+
+  .booking-widget {
+    position: sticky;
+    top: 24px;
+  }
+}
