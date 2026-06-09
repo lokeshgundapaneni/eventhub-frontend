@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 1. Create a customized instance of Axios
 const API = axios.create({
-  baseURL: "http://localhost:8080", 
+  baseURL: "http://localhost:8080",
   headers: {
     "Content-Type": "application/json",
   },
@@ -20,6 +20,9 @@ API.interceptors.request.use(
   (error) => {
     return Promise.reject(error);
   }
+
+
+
 );
 
 export default API;

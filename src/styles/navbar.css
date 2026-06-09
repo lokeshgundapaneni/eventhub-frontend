@@ -1,13 +1,15 @@
 .navbar {
-  max-width: 1400px;
-  margin: 0px auto 0;
+  max-width: 100%;
+  margin: 0px auto;
   height: 80px;
   padding: 0 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #e8e9ea;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
@@ -15,46 +17,51 @@
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -1px;
-  background: linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-  );
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-body {
-  background-color: #f8fafc;
+  text-decoration: none;
+  white-space: nowrap; /* Keeps logo on one line */
 }
 
 .nav-left {
-  flex: 1;
+  flex: 1;                     /* Takes up 1 part of the layout space */
+  display: flex;
+  justify-content: flex-start;
 }
 
 .nav-center {
-  flex: 1;
+  flex: 0 0 auto;              /* Only takes up the exact width of its links */
   display: flex;
-  justify-content: center;
-  gap: 35px;
+  justify-content: center; 
+  align-items: center;
+  gap: 35px;                   /* Clean spacing between options */
 }
 
 .nav-right {
-  flex: 1;
+  flex: 1;                     /* Takes up exactly 1 part to balance out the left side */
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 18px;
 }
 
+/* Changed: Added white-space prevention rule directly here */
 .nav-center a,
-.nav-right a {
+.nav-right a,
+.dashboard-link {
   font-size: 15px;
   font-weight: 600;
   color: #374151;
+  text-decoration: none;
+  white-space: nowrap; /* Crucial fix: Prevents words like "Create Event" from splitting */
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .nav-center a:hover,
-.nav-right a:hover {
+.nav-right a:hover,
+.dashboard-link:hover {
   color: #2563eb;
 }
 
@@ -75,7 +82,8 @@ body {
   transition: width 0.3s ease;
 }
 
-.nav-center a:hover::after {
+.nav-center a:hover::after,
+.nav-center a.active::after {
   width: 100%;
 }
 
@@ -83,23 +91,16 @@ body {
   color: #2563eb;
 }
 
-.nav-center a.active::after {
-  width: 100%;
-}
-
+/* Auth Buttons Styling */
 .register-btn {
   padding: 12px 24px;
   border-radius: 10px;
-  background: linear-gradient(135deg,
-      #2563eb,
-      #1d4ed8);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white !important;
-  box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
 .register-btn:hover {
-  background-color: #1d4ed8;
   transform: translateY(-2px);
 }
 
@@ -108,10 +109,103 @@ body {
   border: 2px solid #2563eb;
   color: #2563eb !important;
   border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
 .login-btn:hover {
   background-color: #2563eb;
   color: white !important;
+}
+
+/* Premium Logout Button Styling */
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap; /* Ensures logout stays on one line */
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+/* Hamburger Icon Toggle Hidden on Desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1010;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #111827;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================
+   📱 MOBILE RESPONSIVE DRAWERS
+   ========================================== */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; 
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  .nav-center, .nav-right {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #e8e9ea;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+  }
+
+  .nav-center {
+    top: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-right {
+    top: 190px; 
+  }
+
+  .nav-center.mobile-open,
+  .nav-right.mobile-open {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

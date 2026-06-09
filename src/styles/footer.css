@@ -5,15 +5,16 @@
 }
 
 .footer-container {
-  width: 100%;
-  padding: 60px 80px;
+  max-width: 1400px; /* Aligns perfectly with your navbar container constraint */
+  margin: 0 auto;
+  padding: 60px 40px;
   display: flex;
   justify-content: space-between;
-  gap: 80px;
+  gap: 60px;
 }
 
 .footer-brand {
-  flex: 2;
+  flex: 1.5; /* Balanced proportional allocation */
 }
 
 .footer-brand h2 {
@@ -25,25 +26,33 @@
 }
 
 .footer-brand p {
-  max-width: 420px;
-  line-height: 1.8;
+  max-width: 360px;
+  line-height: 1.6;
   color: #64748b;
+  font-size: 14px;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 120px; /* Prevents text fragmentation or breaking onto weird lines */
 }
 
 .footer-links h3 {
-  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
   color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .footer-links a {
+  font-size: 14px;
   color: #64748b;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
@@ -51,33 +60,87 @@
 }
 
 .footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
   border-top: 1px solid #e2e8f0;
   text-align: center;
-  padding: 20px;
+  padding: 24px 20px;
   color: #64748b;
+  font-size: 14px;
 }
 
 .social-links {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   margin-top: 20px;
 }
 
 .social-links a {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: white;
   color: #2563eb;
-  font-size: 18px;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .social-links a:hover {
   background: #2563eb;
   color: white;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   ⚡ PROFESSIONAL SPACE-SAVING RESPONSIVENESS
+   ========================================== */
+
+/* Medium/Tablet Viewports */
+@media (max-width: 1024px) {
+  .footer-container {
+    padding: 50px 30px;
+    gap: 40px;
+  }
+}
+
+/* Compact Mobile Screen Optimization */
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 60px;
+  }
+
+  .footer-container {
+    /* Switches to an advanced CSS grid matrix instead of naive vertical stacking */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forms 2 sleek parallel data columns */
+    gap: 40px 24px; /* Row gap and column gap controlled independently */
+    padding: 40px 24px;
+  }
+
+  .footer-brand {
+    grid-column: span 2; /* Pins the brand cleanly across both columns at the top */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 20px;
+    margin-bottom: -10px;
+  }
+
+  .footer-brand p {
+    max-width: 100%; /* Lets details flow naturally without awkward right-side padding gaps */
+  }
+
+  .social-links {
+    margin-top: 15px;
+  }
+}
+
+/* Super Small Devices */
+@media (max-width: 400px) {
+  .footer-container {
+    gap: 30px 16px; /* Dynamically tightens grid gutters so columns never overlap */
+    padding: 35px 16px;
+  }
 }
