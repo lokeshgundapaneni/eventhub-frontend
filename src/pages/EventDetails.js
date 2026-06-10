@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import eventService from "../services/eventService";
+import SeatSelectionModal from "./SeatSelectionModal";
 import "../styles/eventDetails.css";
 
 function EventDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showSeatModal, setShowSeatModal] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -18,21 +21,28 @@ function EventDetails() {
       .then((data) => {
         setEvent(data);
         setLoading(false);
+        if (location.state?.triggerBooking) {
+          setShowSeatModal(true);
+        }
       })
       .catch((err) => {
         console.error("Error fetching event details:", err);
         setError("Could not load event details. Please try again later.");
         setLoading(false);
       });
-  }, [id]);
+  }, [id, location.state]);
 
   const handleBookTicket = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       navigate("/login");
     } else {
-      navigate(`/book/${event.id}`);
+      setShowSeatModal(true);
     }
+  };
+
+  const handleRefreshData = () => {
+    eventService.getEventById(id).then(data => setEvent(data));
   };
 
   if (loading) return <div className="details-loading">Loading Event Details...</div>;
@@ -41,15 +51,12 @@ function EventDetails() {
 
   return (
     <div className="event-details-container">
-      
-      {/* Sleek, Rounded Back Button */}
       <button className="round-back-btn" onClick={() => navigate(-1)} aria-label="Go back">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="back-icon">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
       </button>
 
-      {/* BookMyShow Style Immersive Hero Section */}
       <div className="details-hero">
         <div className="details-hero-backdrop" style={{ backgroundImage: `url(${event.imageUrl})` }}></div>
         <div className="details-hero-content">
@@ -67,7 +74,6 @@ function EventDetails() {
             </div>
             <h1 className="details-title">{event.title}</h1>
             <p className="details-organizer">Hosted by <span>{event.organizerName}</span></p>
-            
             <div className="details-hero-quick-meta">
               <div className="meta-item">📅 {event.eventDate}</div>
               <div className="meta-item">📍 {event.venue}</div>
@@ -76,16 +82,12 @@ function EventDetails() {
         </div>
       </div>
 
-      {/* Amazon Style Split Content Layout */}
       <div className="details-main-layout">
-        
-        {/* Left Column: Descriptions and Info */}
         <div className="details-left-col">
           <section className="info-section">
             <h3>About the Event</h3>
             <p className="description-text">{event.description}</p>
           </section>
-
           <section className="info-section venue-section">
             <h3>Venue & Location</h3>
             <div className="venue-card">
@@ -98,16 +100,13 @@ function EventDetails() {
           </section>
         </div>
 
-        {/* Right Column: Amazon-Style Purchase Widget */}
         <div className="details-right-col">
           <div className="booking-widget">
             <div className="widget-price-row">
               <span className="widget-label">Ticket Price</span>
               <span className="widget-price">₹{event.ticketPrice}</span>
             </div>
-            
             <hr className="widget-divider" />
-
             <div className="widget-status-row">
               {event.remainingSeats > 0 && event.status !== "COMPLETED" ? (
                 <p className="seats-available">In Stock: Only <span>{event.remainingSeats} tickets</span> left!</p>
@@ -115,7 +114,6 @@ function EventDetails() {
                 <p className="seats-unavailable">Currently Unavailable / Sold Out</p>
               )}
             </div>
-
             <button 
               className="widget-booking-btn"
               onClick={handleBookTicket}
@@ -125,8 +123,15 @@ function EventDetails() {
             </button>
           </div>
         </div>
-
       </div>
+
+      {showSeatModal && (
+        <SeatSelectionModal 
+          event={event} 
+          onClose={() => setShowSeatModal(false)} 
+          onPaymentSuccess={handleRefreshData}
+        />
+      )}
     </div>
   );
 }

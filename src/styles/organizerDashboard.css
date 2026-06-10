@@ -1,0 +1,45 @@
+/* Container - Deep Navy background */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #0b1120;
+  padding: 40px;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Stats Section */
+.stats-header { display: flex; gap: 24px; margin-bottom: 48px; }
+.stat-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 24px;
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.stat-card h3 { color: #64748b; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0; }
+.stat-card p { font-size: 2.25rem; font-weight: 700; color: #f8fafc; margin: 12px 0 0 0; }
+
+/* Grid Layout */
+.event-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
+
+/* Refined Event Card */
+.event-card {
+  background: #1e293b;
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.event-card:hover { border-color: #4f46e5; transform: translateY(-5px); }
+
+.card-title { color: #072e52; font-size: 1.5rem; font-weight: 600; margin: 0 0 16px 0; }
+.card-detail { color: #4a5f69; font-size: 0.95rem; margin-bottom: 8px; display: flex; align-items: center; }
+
+/* Buttons */
+.card-actions { display: flex; gap: 12px; margin-top: 24px; }
+.btn { border: none; padding: 12px 24px; border-radius: 12px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+.btn-update { background: #312e81; color: #c7d2fe; }
+.btn-update:hover { background: #4f46e5; color: #ffffff; }
+.btn-delete { background: #7f1d1d; color: #fecaca; }
+.btn-delete:hover { background: #b91c1c; color: #ffffff; }

@@ -10,15 +10,18 @@ import CreateEvent from './pages/CreateEvent';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Navbar from './components/Navbar';
+import TicketDetails from './pages/TicketDetails';
 import Footer from './components/Footer';
 import Events from './pages/Events';
+import UpdateEventForm from './pages/UpdateEventForm';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <BrowserRouter>
 
     <Navbar />
-
+    <Toaster />
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/login" element={<Login/>}/>
@@ -26,9 +29,11 @@ function App() {
       <Route path="/events" element={<Events/>}/>
       <Route path="/events/:id" element={<EventDetails/>} />
       <Route path="/my-bookings" element={<MyBookings/>}/>
-      <Route path="/organizer/dashboard" element={<OrganizerDashboard/>}/>
-      <Route path="/organizer/create-event" element={<CreateEvent/>}/>
-      <Route path="/admin/dashboard" element={<AdminDashboard/>}/>
+      <Route path="/organizer-dashboard" element={<OrganizerDashboard/>}/>
+      <Route path="/update-event/:id" element={<UpdateEventForm />} />
+      <Route path="/create-event" element={<CreateEvent/>}/>
+      <Route path='/ticket-details/:id' element={<TicketDetails/>}/>
+      <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
       <Route path="/admin/users" element={<ManageUsers/>}/>
       <Route path="/admin/categories" element={<ManageCategories/>}/>
     </Routes>

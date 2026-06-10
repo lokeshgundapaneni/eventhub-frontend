@@ -1,0 +1,215 @@
+.seat-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2500;
+  font-family: 'Inter', sans-serif;
+}
+
+.seat-modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(241, 245, 249, 0.8);
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.seat-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #f1f5f9;
+  border: none;
+  font-size: 20px;
+  color: #64748b;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seat-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.seat-modal-body {
+  padding: 40px;
+  text-align: center;
+}
+
+.seat-modal-body h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.seat-modal-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 32px;
+  display: block;
+}
+
+/* Dynamic Vehicle Animation Panel */
+.vehicle-display-panel {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.vehicle-graphic-icon {
+  font-size: 56px;
+  line-height: 1;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+  animation: bounceVehicle 0.4s ease-out;
+}
+
+.vehicle-description-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4f46e5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Modern Pill-Style Ticket Counter Grid */
+.number-selector-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.number-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #334155;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.number-circle:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.number-circle.active {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 8px 16px -4px rgba(79, 70, 229, 0.4);
+  transform: translateY(-2px);
+}
+
+.number-circle:disabled {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.pricing-summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 16px 24px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  border: 1px solid #f1f5f9;
+}
+
+.pricing-meta-label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.pricing-meta-label .label-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.pricing-meta-label .label-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.total-payable-amount-tag {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+/* Glassmorphic Action Control Button */
+.select-seats-btn {
+  width: 100%;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 18px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.select-seats-btn:hover:not(:disabled) {
+  background: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.select-seats-btn:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes bounceVehicle {
+  0% { transform: scale(0.6); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

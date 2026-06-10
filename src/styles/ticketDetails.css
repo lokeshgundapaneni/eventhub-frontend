@@ -1,0 +1,37 @@
+/* General Layout */
+.ticket-details-container { max-width: 500px; margin: 40px auto; padding: 20px; font-family: 'Segoe UI', sans-serif; }
+.back-btn { background: none; border: none; color: #2563eb; font-weight: 600; cursor: pointer; margin-bottom: 20px; }
+
+/* Ticket Card */
+.ticket-card { background: #ffffff; padding: 35px; border-radius: 24px; border: 1px solid #dbeafe; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1); }
+.ticket-card h1 { font-size: 1.5rem; color: #1e3a8a; margin-bottom: 25px; border-bottom: 2px dashed #bfdbfe; padding-bottom: 15px; }
+.detail-row { display: flex; justify-content: space-between; margin: 18px 0; }
+.detail-row span { font-weight: 700; color: #475569; }
+
+/* Status Pill */
+.status-pill { font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; }
+.status-pill.confirmed { background: #dcfce7; color: #166534; }
+.status-pill.cancelled { background: #fee2e2; color: #991b1b; }
+
+/* Modal Overlay */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.modal-content { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 320px; text-align: center; box-shadow: 0 20px 25px rgba(0,0,0,0.2); }
+.modal-actions { display: flex; gap: 15px; margin-top: 25px; }
+.modal-actions button { flex: 1; padding: 12px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; }
+.btn-ok { background: #2563eb; color: white; }
+.btn-cancel { background: #f3f4f6; color: #374151; }
+
+/* Action Button */
+.cancel-btn { width: 100%; padding: 14px; margin-top: 30px; background: #2563eb; color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 700; }
+.cancel-btn:hover { background: #1d4ed8; }
+
+
+.modal-content h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+.modal-content p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}

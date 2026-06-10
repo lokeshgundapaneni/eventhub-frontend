@@ -1,0 +1,418 @@
+/* Container & Layout */
+.admin-dashboard-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.admin-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.admin-dashboard-header h1 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+/* Tabs */
+.admin-tabs {
+  background: #f0f2f5;
+  padding: 5px;
+  border-radius: 12px;
+  display: flex;
+  gap: 5px;
+}
+
+.admin-tabs button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #64748b;
+}
+
+.admin-tabs button.active {
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Area */
+.admin-content-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+  min-height: 500px;
+}
+
+
+/* Special Heading Effect */
+.special-heading {
+  font-size: 2.2rem !important;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.special-heading span {
+  color: #1e293b; /* Keeps 'Admin' a solid dark color */
+  -webkit-text-fill-color: #1e293b;
+}
+
+/* Vibrant Active Tab */
+.admin-tabs button.active {
+  background: #2563eb !important; /* Electric Blue */
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Hover effect for all tabs */
+.admin-tabs button:hover {
+  background: #e2e8f0;
+}
+
+/* Table Enhancements (Apply these to your EventList table) */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+.admin-table th {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  padding: 15px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.admin-table td {
+  padding: 20px 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-table tr:hover {
+  background-color: #f8fafc;
+}
+
+
+
+/* event list */
+
+/* Card Body Styling */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Spacing between rows */
+  margin: 15px 0;
+}
+
+.info-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* Style for the Labels (e.g., Venue) */
+.info-group .label {
+  color: #64748b; /* Soft grey */
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+/* Style for the Values (e.g., City Center) */
+.info-group .value {
+  color: #1e293b; /* Dark charcoal */
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Specific styling for Price to make it stand out */
+.info-group .value:contains('₹') {
+  color: #059669; /* Green for money */
+}
+
+
+/* Toolbar */
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.admin-search-input {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  transition: all 0.3s;
+}
+
+.admin-search-input:focus {
+  background: white;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Primary Button Styling */
+.btn-primary {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Event Card */
+.event-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+/* Action Buttons */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-outline {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.btn-danger {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+/* Container for buttons */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Base button style */
+.btn-action {
+  flex: 1; /* Makes them share the width 50/50 */
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* Edit Button Style */
+.btn-action.edit {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.btn-action.edit:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Delete Button Style */
+.btn-action.delete {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-action.delete:hover {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+/* Add a subtle click effect */
+.btn-action:active {
+  transform: scale(0.98);
+}
+
+
+
+/* usersList */
+/* Status Dot */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.status-dot.active { background: #10b981; }
+.status-dot.inactive { background: #ef4444; }
+
+/* Table Overrides */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.admin-table td {
+  padding: 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Badge Styling */
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.badge.admin { background: #fee2e2; color: #b91c1c; }
+.badge.user { background: #dcfce7; color: #166534; }
+
+/* Loading/Empty States */
+.loading-spinner, .no-data {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.text-danger { color: #ef4444; }
+
+/* Table Cleanup */
+.user-info { display: flex; align-items: center; gap: 15px; }
+.admin-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+.admin-table tbody tr { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.admin-table td { padding: 12px 20px; }
+.admin-table td:first-child { border-radius: 12px 0 0 12px; }
+.admin-table td:last-child { border-radius: 0 12px 12px 0; }
+
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.admin-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+/* Perfect alignment for buttons */
+.action-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-action {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  transition: 0.2s;
+}
+
+.edit-btn { background: #f8fafc; color: #475569; }
+.edit-btn:hover { background: #e2e8f0; }
+
+.delete-btn { background: #fee2e2; color: #dc2626; border: none; }
+.delete-btn:hover { background: #fecaca; }
+
+/* Role Badge */
+.role-badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #f1f5f9;
+}

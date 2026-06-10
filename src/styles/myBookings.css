@@ -1,0 +1,109 @@
+.my-bookings-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border: 2px dashed #e0e0e0;
+  margin-top: 20px;
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-state h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: #666;
+  margin-bottom: 24px;
+  max-width: 300px;
+}
+
+.browse-events-btn {
+  padding: 12px 24px;
+  background-color: #007bff; /* Change to your brand color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.browse-events-btn:hover {
+  background-color: #0056b3;
+}
+
+.booking-item-row {
+  cursor: pointer; /* Makes sure the user knows it's a link */
+  transition: transform 0.1s ease;
+}
+
+.booking-item-row:active {
+  transform: scale(0.99); /* Subtle click animation */
+}
+
+.my-bookings-header h1 { font-size: 2rem; color: #111; margin-bottom: 8px; }
+.my-bookings-header p { color: #666; margin-bottom: 30px; }
+
+.booking-item-row {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-item-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.booking-item-icon {
+  background: #ede9fe;
+  color: #4f46e5;
+  padding: 16px;
+  border-radius: 12px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.booking-item-info h3 { margin: 0 0 4px 0; font-size: 1.1rem; }
+.booking-item-meta { margin: 0; font-size: 0.9rem; color: #444; }
+.booking-item-date { font-size: 0.75rem; color: #999; }
+
+.status-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.status-badge.completed { background: #dcfce7; color: #166534; }
+.status-badge.confirmed { background: #dcfce7; color: #166534; }
+.status-badge.failed { background: #fee2e2; color: #991b1b; }
+
+@media (max-width: 600px) {
+  .my-bookings-container { margin-top: 20px; }
+  .booking-item-row { padding: 15px; }
+}

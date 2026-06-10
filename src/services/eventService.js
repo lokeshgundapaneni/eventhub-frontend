@@ -17,7 +17,6 @@ const eventService = {
         }
     },
 
-
     // GET/events/{id}
     getEventById: async (id) => {
         try {
@@ -61,6 +60,14 @@ const eventService = {
       console.error(`Error deleting event with ID ${id}:`, error);
       throw error;
     }
-  }
+  },
+    getMyEvents: async () => {
+    const res = await API.get("/events/organizer/my-events");
+    return res.data;
+  },
+  getMyStats: async () => {
+    const res = await API.get("/events/organizer/stats");
+    return res.data;
+  },
 };
 export default eventService;

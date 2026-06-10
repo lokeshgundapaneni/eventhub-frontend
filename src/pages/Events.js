@@ -34,11 +34,9 @@ function Events() {
   const handleBookTicket = (eventId) => {
     const token = localStorage.getItem("token");
     if (!token) {
-      // If not logged in, boot them to login
       navigate("/login");
     } else {
-      // If logged in, send them to the booking flow (we will create this service next!)
-      navigate(`/book/${eventId}`);
+      navigate(`/events/${eventId}`, { state: { triggerBooking: true } });
     }
   };
 
@@ -81,7 +79,6 @@ function Events() {
                   <span className="event-seats">{event.remainingSeats} left</span>
                 </div>
 
-                {/* The New Action Buttons Group */}
                 <div className="event-card-actions">
                   <button 
                     className="btn-secondary" 
