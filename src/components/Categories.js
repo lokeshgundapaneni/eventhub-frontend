@@ -25,20 +25,12 @@ function Categories() {
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error fetching categories from backend:", error);
+        console.error("Error fetching categories:", error);
         setLoading(false);
       });
   }, []);
 
-  if (loading) {
-    return (
-      <section className="categories-section">
-        <div className="section-header">
-          <h2 className="section-title">Loading Categories...</h2>
-        </div>
-      </section>
-    );
-  }
+  if (loading) return <section className="categories-section"><h2 className="section-title">Loading...</h2></section>;
 
   return (
     <section className="categories-section">
@@ -50,9 +42,11 @@ function Categories() {
 
       <div className="categories-grid">
         {categories.map((category) => (
-          <div key={category.id} 
+          <div 
+            key={category.id} 
             className="category-card"
-            onClick={() => navigate(`/events?categoryId=${category.id}`)}>
+            onClick={() => navigate(`/events?categoryId=${category.id}`)}
+          >
             <div className="category-icon-wrapper">
               {iconMap[category.icon] || <Award size={32} />} 
             </div>

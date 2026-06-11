@@ -416,3 +416,161 @@
   font-weight: 700;
   background: #f1f5f9;
 }
+
+/* Container: Allows horizontal scroll on mobile */
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  width: 100%;
+  overflow-x: auto; /* This makes it responsive on small screens */
+  box-sizing: border-box;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 600px; /* Prevents columns from squishing too much */
+  border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Responsive Action Buttons */
+.action-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap; /* Allows buttons to wrap on very small screens */
+}
+
+.btn-action {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Keeps text on one line */
+}
+
+/* Responsive Font sizing */
+@media (max-width: 768px) {
+  .admin-table th, .admin-table td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* Container */
+.cat-list-manager {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Toolbar */
+.cat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.cat-search-input {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 300px;
+}
+
+.cat-btn-primary {
+    padding: 12px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Grid Layout */
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.cat-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cat-card-header h3 {
+    margin: 0 0 15px 0;
+    color: #1f2937;
+}
+
+.cat-description {
+    color: #6b7280;
+    font-size: 0.95rem;
+    min-height: 60px; /* Keeps cards uniform height */
+}
+
+/* Actions */
+.cat-card-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.cat-btn-edit, .cat-btn-delete {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cat-btn-edit { background: #e0e7ff; color: #4338ca; }
+.cat-btn-delete { background: #fee2e2; color: #b91c1c; }
+
+/* contactlist */
+
+.admin-page { padding: 40px; }
+
+.brutalist-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #000;
+  background: #fff;
+}
+
+.brutalist-table th, .brutalist-table td {
+  border: 2px solid #000;
+  padding: 15px;
+  text-align: left;
+}
+
+.brutalist-table th {
+  background: #f8d568; 
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.brutalist-table tr:hover {
+  background: #eee;
+}

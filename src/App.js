@@ -4,8 +4,6 @@ import OrganizerDashboard from './pages/OrganizerDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import MyBookings from './pages/MyBookings';
 import EventDetails from './pages/EventDetails';
-import ManageUsers from './pages/ManageUsers';
-import ManageCategories from './pages/ManageCategories';
 import CreateEvent from './pages/CreateEvent';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -15,12 +13,22 @@ import Footer from './components/Footer';
 import Events from './pages/Events';
 import UpdateEventForm from './pages/UpdateEventForm';
 import { Toaster } from 'react-hot-toast';
+import EditUser from './pages/EditUser';
+import UserList from './components/UserList'
+import CategoryList from './components/CategoryList';
+import EventList from './components/EventList';
+import CreateCategory from './pages/CreateCategory';
+import UpdateCategory from './pages/UpdateCategory';
+import ContactPage from './pages/ContactPage';
+import TestimonialForm from './pages/TestimonialForm';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
 
     <Navbar />
+    <ScrollToTop/>
     <Toaster />
     <Routes>
       <Route path="/" element={<Home/>} />
@@ -34,8 +42,15 @@ function App() {
       <Route path="/create-event" element={<CreateEvent/>}/>
       <Route path='/ticket-details/:id' element={<TicketDetails/>}/>
       <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
-      <Route path="/admin/users" element={<ManageUsers/>}/>
-      <Route path="/admin/categories" element={<ManageCategories/>}/>
+       <Route path="/admin/eventsList" element={<EventList/>}/>
+      <Route path="/admin/categories" element={<CategoryList/>}/>
+      <Route path="admin/editUser/:id" element={<EditUser/>}/>
+      <Route path="/admin/users" element={<UserList/>}/>
+      <Route path="admin/editUser/:id" element={<EditUser/>}/>
+      <Route path="/create-category" element={<CreateCategory/>}/>
+      <Route path="/update-category/:id" element={<UpdateCategory/>}/>
+      <Route path="/contact-form" element={<ContactPage/>}/>
+      <Route path="/testimonials" element={<TestimonialForm/>}/>
     </Routes>
 
     <Footer />

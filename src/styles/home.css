@@ -1,0 +1,168 @@
+.partner-section, .community-section {
+    border: 3px solid #000;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 10px 10px 0px #000;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.partner-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.partner-label {
+    background: #fef08a;
+    border: 2px solid #000;
+    padding: 4px 12px;
+    font-weight: 900;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.partner-content h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    line-height: 1.1;
+    color: #111827;
+}
+
+.partner-content span { color: #2563eb; }
+
+.partner-content p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-primary-solid {
+    background: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border: 2px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 6px 6px 0px #2563eb;
+    transition: 0.2s;
+}
+
+.btn-primary-solid:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #1e40af;
+}
+
+.partner-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #000;
+}
+
+.community-section { text-align: center; }
+
+.community-grid { 
+    display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px; 
+}
+
+.community-btn {
+    padding: 15px 25px;
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+
+.community-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+/* Ensure all main sections have consistent vertical spacing */
+.partner-section, 
+.community-section, 
+.categories-section {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+}
+
+.section-wrapper {
+    margin-bottom: 80px; /* Adjust this value to increase/decrease the gap */
+}
+
+/* Optional: remove the margin from the components themselves if using wrappers */
+.partner-section, .community-section, .categories-section {
+    margin: 0 auto !important; /* Center only */
+}
+
+@media (max-width: 768px) {
+    .partner-section { grid-template-columns: 1fr; padding: 25px; }
+    .partner-content h2 { font-size: 1.8rem; }
+}
+
+
+
+/* Ensure the section uses flexbox */
+.partner-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* This is the class that flips the order */
+.contact-promo-flipped {
+    flex-direction: row-reverse; /* Flips image to left, content to right */
+}
+
+/* Mobile responsiveness: flip back to stack */
+@media (max-width: 768px) {
+    .partner-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-promo-flipped {
+        flex-direction: column; /* Keep stacked on mobile */
+    }
+}
+
+/* Ensure image container looks good in the new position */
+.partner-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.partner-content {
+    flex: 1;
+}
+
+
+.grid-background {
+  min-height: 100vh;
+  /* The grid pattern */
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(to right, #e2e8f0 1px, transparent 1px), 
+    linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.content-wrapper {
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}

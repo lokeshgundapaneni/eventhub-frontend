@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import EventList from '../components/EventList';
 import UserList from '../components/UserList';
 import CategoryList from '../components/CategoryList';
+import ContactList from "../components/ContactList"
 import '../styles/admin.css';
 
 function AdminDashboard() {
@@ -17,6 +18,7 @@ function AdminDashboard() {
           <button className={activeTab === 'events' ? 'active' : ''} onClick={() => setActiveTab('events')}>Events</button>
           <button className={activeTab === 'users' ? 'active' : ''} onClick={() => setActiveTab('users')}>Users</button>
           <button className={activeTab === 'categories' ? 'active' : ''} onClick={() => setActiveTab('categories')}>Categories</button>
+          <button className={activeTab === 'contactList' ? 'active' : ''} onClick={() => setActiveTab('contactList')}>ContactList</button>
         </div>
       </header>
 
@@ -24,6 +26,7 @@ function AdminDashboard() {
         {activeTab === 'events' && <EventList />}
         {activeTab === 'users' && <UserList />}
         {activeTab === 'categories' && <CategoryList />}
+        {activeTab === 'contactList' && <ContactList />}
       </main>
     </div>
   );

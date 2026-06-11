@@ -23,3 +23,73 @@ button {
   cursor: pointer;
   font-family: inherit;
 }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+:root {
+  --border-thick: 3px solid #000;
+  --border-thin: 2px solid #000;
+  --shadow-offset: 6px 6px 0px #000;
+  --accent-yellow: #fef08a;
+  --accent-blue: #2563eb;
+  --font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Base resets for the refined look */
+* { box-sizing: border-box; }
+body { font-family: var(--font-family); background-color: #f9fafb; color: #000; }
+
+/* Global Card Styling */
+.card-refinement {
+  border: var(--border-thick);
+  border-radius: 12px;
+  box-shadow: var(--shadow-offset);
+  background: #fff;
+}
+
+/* Global Button Styling */
+.btn-refinement {
+  border: var(--border-thin);
+  border-radius: 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000;
+  transition: 0.1s;
+}
+
+.btn-refinement:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+/* Bulk Reset for Soft UI elements */
+ .login-card, .register-card, .empty-state, .seat-modal-card {
+  border-radius: 12px !important;
+  border: 3px solid #000 !important;
+  box-shadow: 6px 6px 0px #000 !important;
+}
+
+.event-card
+{
+  border-radius: 8px !important;
+  border: 1px solid #646060 !important;
+}
+
+button,  select, textarea {
+  border-radius: 8px !important;
+  border: 1px solid #000 !important;
+}
+
+input{
+   border-radius: 8px !important;
+  border: 2px solid #000 !important;
+}
+
+h1, h2, h3, .btn-primary {
+  text-transform: uppercase !important;
+  font-weight: 900 !important;
+}

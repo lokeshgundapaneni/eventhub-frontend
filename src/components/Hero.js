@@ -1,7 +1,6 @@
-// src/components/Hero.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/hero.css"; // Moving hero styles to its own CSS file!
+import "../styles/hero.css";
 import heroBg from "../assets/hero-section-image.jpg";
 
 function Hero() {
@@ -9,27 +8,24 @@ function Hero() {
 
   return (
     <section className="hero-container">
-      {/* 1. The Shady Background Image Overlay Layer */}
+      {/* Image portion at the top */}
       <div 
         className="hero-background" 
         style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="hero-overlay"></div>
-      </div>
+      ></div>
 
-      {/* 2. The Content Layer Sitting Safely On Top */}
+      {/* Content portion underneath */}
       <div className="hero-content">
         <span className="hero-subtitle">Discover & Experience</span>
         <h1 className="hero-title">
-          Your Gateway to the <span className="highlight-text">Most Premium</span> Events
+          YOUR GATEWAY TO THE <br /> <span className="highlight-text">MOST PREMIUM</span> EVENTS
         </h1>
         <p className="hero-description">
-          Book tickets for the finest concerts, tech conferences, art exhibitions, 
-          and exclusive workshops happening around you.
+          Book tickets for the finest concerts, tech conferences, and exclusive workshops.
         </p>
         <div className="hero-buttons">
           <button className="btn-primary" onClick={() => navigate("/events")}>
-            Explore Events
+            EXPLORE EVENTS →
           </button>
         </div>
       </div>

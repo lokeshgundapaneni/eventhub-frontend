@@ -1,109 +1,160 @@
 .my-bookings-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 40px auto;
   padding: 0 20px;
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-.empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  text-align: center;
-  background: #f9f9f9;
-  border-radius: 12px;
-  border: 2px dashed #e0e0e0;
-  margin-top: 20px;
-}
-
-.empty-state-icon {
-  font-size: 64px;
-  margin-bottom: 16px;
-}
-
-.empty-state h2 {
-  color: #333;
+.my-bookings-header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
   margin-bottom: 8px;
 }
 
-.empty-state p {
-  color: #666;
-  margin-bottom: 24px;
-  max-width: 300px;
-}
-
-.browse-events-btn {
-  padding: 12px 24px;
-  background-color: #007bff; /* Change to your brand color */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.my-bookings-header p {
+  color: #444;
   font-weight: 600;
-  transition: background 0.2s;
+  margin-bottom: 30px;
 }
-
-.browse-events-btn:hover {
-  background-color: #0056b3;
-}
-
-.booking-item-row {
-  cursor: pointer; /* Makes sure the user knows it's a link */
-  transition: transform 0.1s ease;
-}
-
-.booking-item-row:active {
-  transform: scale(0.99); /* Subtle click animation */
-}
-
-.my-bookings-header h1 { font-size: 2rem; color: #111; margin-bottom: 8px; }
-.my-bookings-header p { color: #666; margin-bottom: 30px; }
 
 .booking-item-row {
   display: flex;
   align-items: center;
   padding: 20px;
   background: white;
-  border-radius: 16px;
-  border: 1px solid #f0f0f0;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 3px solid #000;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 6px 6px 0px #000;
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
 .booking-item-row:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #000;
 }
 
 .booking-item-icon {
-  background: #ede9fe;
-  color: #4f46e5;
+  background: #fef08a;
+  color: #000;
   padding: 16px;
-  border-radius: 12px;
+  border: 2px solid #000;
+  border-radius: 8px;
   margin-right: 20px;
   font-size: 20px;
+  font-weight: 900;
 }
 
-.booking-item-info h3 { margin: 0 0 4px 0; font-size: 1.1rem; }
-.booking-item-meta { margin: 0; font-size: 0.9rem; color: #444; }
-.booking-item-date { font-size: 0.75rem; color: #999; }
-
-.status-badge {
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 5px 12px;
-  border-radius: 50px;
+.booking-item-info h3 { 
+  margin: 0 0 4px 0; 
+  font-size: 1.2rem; 
+  font-weight: 900;
   text-transform: uppercase;
 }
 
-.status-badge.completed { background: #dcfce7; color: #166534; }
-.status-badge.confirmed { background: #dcfce7; color: #166534; }
-.status-badge.failed { background: #fee2e2; color: #991b1b; }
+.booking-item-meta { 
+  margin: 0; 
+  font-size: 0.9rem; 
+  font-weight: 600;
+  color: #333; 
+}
 
-@media (max-width: 600px) {
-  .my-bookings-container { margin-top: 20px; }
-  .booking-item-row { padding: 15px; }
+.status-badge {
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 4px 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.status-badge.completed, .status-badge.confirmed { background: #2563eb; color: #fff; }
+.status-badge.failed { background: #ef4444; color: #fff; }
+
+.empty-state {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0px #000;
+  margin-top: 20px;
+}
+
+.browse-events-btn {
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.browse-events-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px #2563eb;
+}
+
+/* Ensure the empty state matches the card aesthetic */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 30px;
+  text-align: center;
+  background: #ffffff;
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0px #000;
+  margin-top: 20px;
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  /* Adds a subtle pop if you use an emoji or icon */
+}
+
+.empty-state h2 {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 30px;
+  max-width: 350px;
+  line-height: 1.5;
+}
+
+/* Ensure the button matches your other primary buttons */
+.browse-events-btn {
+  padding: 14px 28px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 3px solid #000;
+  border-radius: 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000;
+  transition: 0.1s;
+}
+
+.browse-events-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+  background-color: #1d4ed8;
 }

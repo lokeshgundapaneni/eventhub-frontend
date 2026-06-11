@@ -1,0 +1,104 @@
+/* Container: Hero Refinement Style */
+.partner-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    background: #ffffff;
+    border: 3px solid #000;
+    border-radius: 16px;
+    box-shadow: 10px 10px 0px #000;
+}
+
+/* Flips the layout: Image Left, Content Right */
+.contact-promo-flipped {
+    flex-direction: row-reverse;
+}
+
+/* Image Container */
+.partner-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder img {
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid #000;
+    border-radius: 12px;
+    box-shadow: 8px 8px 0px #000;
+    display: block;
+}
+
+/* Content Area */
+.partner-content {
+    flex: 1;
+}
+
+.partner-label {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fef08a; /* Signature Yellow */
+    border: 2px solid #000;
+    border-radius: 6px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.partner-content h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.partner-content h2 span {
+    color: #2563eb; /* Primary Blue */
+}
+
+.partner-content p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Button Refinement */
+.btn-primary-solid {
+    background: #000;
+    color: #fff;
+    padding: 16px 32px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #2563eb;
+    transition: 0.1s;
+}
+
+.btn-primary-solid:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #2563eb;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .partner-section, 
+    .contact-promo-flipped {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    
+    .partner-content h2 {
+        font-size: 2rem;
+    }
+}

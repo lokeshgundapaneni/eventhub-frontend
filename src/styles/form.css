@@ -1,0 +1,87 @@
+/* Container for the form to ensure it centers nicely */
+.user-form {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-form h2 {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: #1a202c;
+  text-align: center;
+}
+
+/* Label Styling */
+.user-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+/* Input and Select Styling */
+.user-form input, 
+.user-form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.user-form input:focus, 
+.user-form select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Button Styling */
+.submit-btn, .cancel-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.submit-btn {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+}
+
+.cancel-btn {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.cancel-btn:hover {
+  background-color: #e2e8f0;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  margin-top: 100px;
+  color: #64748b;
+  font-weight: 500;
+}

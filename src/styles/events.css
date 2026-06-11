@@ -43,7 +43,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  border: 1px solid #e5e7eb;
+  border: 2px solid #363738;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -240,6 +240,51 @@
   }
 }
 
+/* Ensure the button has no shadow and is simply blue */
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  box-shadow: none !important; /* Force no shadow */
+  border: none !important;    /* Ensure no borders that might look like shadows */
+  outline: none !important;
+}
+
+/* Hover state remains clean blue */
+.btn-primary:hover:not(:disabled) { 
+  background-color: #1d4ed8; 
+  box-shadow: none !important;
+}
+
+/* If you need to make sure the card hover doesn't bleed onto the button */
+.event-card:hover {
+  /* Keep your transform, but ensure it doesn't affect the buttons specifically */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); 
+}
+
+/* Reduce the image height */
+.event-img {
+    height: 140px; /* Was 180px/200px */
+}
+
+/* Reduce the internal padding */
+.event-card-content {
+    padding: 12px; /* Was 16px/20px */
+}
+
+/* Reduce the title font size */
+.event-card-content h3 {
+    font-size: 1rem; /* Was 1.15rem */
+}
+
+/* Reduce the paragraph text size */
+.event-card-content p {
+    font-size: 0.8rem; /* Was 0.88rem */
+    margin-bottom: 12px;
+}
+
+
+
 
 /* ==========================================================================
    Media Queries (Responsive Scaling Up)
@@ -285,5 +330,100 @@
 @media (min-width: 1024px) {
   .events-grid {
     gap: 30px; /* Give layout details maximum breathing room */
+  }
+}
+
+
+.events-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  /* Hero style: thick border and offset shadow */
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.filter-input {
+  padding: 12px 16px;
+  /* Hero style: thick border for inputs */
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 300px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.filter-input:focus {
+  outline: none;
+  background-color: #fef08a; /* Highlight color used in your Hero */
+  border-color: #000;
+}
+
+.price-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  min-width: 200px;
+}
+
+.events-page-title {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.events-page-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 50px;
+  height: 4px;
+  background-color: #2563eb;
+  border-radius: 2px;
+}
+
+.price-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  min-width: 200px;
+}
+
+.filter-slider {
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.no-events-msg {
+  text-align: center;
+  grid-column: 1 / -1;
+  color: #6b7280;
+  font-size: 1.1rem;
+  padding: 40px 0;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 640px) {
+  .events-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-input {
+    width: 100%;
   }
 }

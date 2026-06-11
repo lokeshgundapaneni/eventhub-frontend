@@ -1,0 +1,88 @@
+/* Container for centering */
+.cat-form-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+    background-color: #f9fafb;
+}
+
+/* Form Card */
+.cat-create-form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.cat-create-form h2 {
+    margin: 0 0 24px 0;
+    color: #111827;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Form Groups */
+.cat-form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.cat-form-group input, 
+.cat-form-group textarea {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.cat-form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Button Container */
+.cat-form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.cat-btn-save {
+    flex: 2;
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cat-btn-cancel {
+    flex: 1;
+    padding: 12px;
+    background: #f3f4f6;
+    color: #4b5563;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cat-btn-save:hover { background: #1d4ed8; }
+.cat-btn-cancel:hover { background: #e5e7eb; }

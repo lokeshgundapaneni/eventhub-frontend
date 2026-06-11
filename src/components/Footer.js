@@ -1,67 +1,47 @@
+import React from 'react';
 import { NavLink } from "react-router-dom";
-import {
-  FaLinkedin,
-  FaInstagram,
-  FaTwitter,
-  FaFacebook
-} from "react-icons/fa";
-
+import { FaLinkedin, FaYoutube, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 import "../styles/footer.css";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer-refinement">
       <div className="footer-container">
+        
+        {/* Row 1: Logo & Nav */}
+        <div className="footer-top">
+          <NavLink to="/" className="text-logo">EVENTHUB</NavLink>
+          <nav className="footer-links">
+            <NavLink to="/team">Team</NavLink>
+            <NavLink to="/privacy">Privacy Policy</NavLink>
+            <NavLink to="/terms">Terms of Service</NavLink>
+          </nav>
+        </div>
 
-        <div className="footer-brand">
-          <h2>EventHub</h2>
+        {/* Row 2: Big Socials (Permanently Colored) */}
+        <div className="footer-socials">
+          <a href="#" className="icon-linkedin"><FaLinkedin /></a>
+          <a href="#" className="icon-youtube"><FaYoutube /></a>
+          <a href="#" className="icon-facebook"><FaFacebook /></a>
+          <a href="#" className="icon-instagram"><FaInstagram /></a>
+          <a href="#" className="icon-twitter"><FaTwitter /></a>
+          <a href="mailto:your@email.com" className="icon-gmail"><SiGmail /></a>
+        </div>
 
-          <p>
-            Discover, create and manage events
-            effortlessly with EventHub.
-          </p>
-
-          <div className="social-links">
-            <a href="#">
-              <FaLinkedin />
-            </a>
-
-            <a href="#">
-              <FaInstagram />
-            </a>
-
-            <a href="#">
-              <FaTwitter />
-            </a>
-
-            <a href="#">
-              <FaFacebook />
-            </a>
+        {/* Row 3: Action Buttons & Copyright */}
+        <div className="footer-bottom">
+          <div className="footer-actions">
+            <NavLink to="/testimonials" className="btn-footer btn-yellow">
+              Leave a Testimonial
+            </NavLink>
+            <NavLink to="/contact-form" className="btn-footer btn-blue">
+              Contact Us
+            </NavLink>
           </div>
+          <p className="copyright">© 2026 EVENTHUB. ALL RIGHTS RESERVED.</p>
         </div>
 
-        <div className="footer-links">
-          <h3>Quick Links</h3>
-
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/events">Events</NavLink>
-          <NavLink to="/login">Login</NavLink>
-          <NavLink to="/register">Register</NavLink>
-        </div>
-
-        <div className="footer-links">
-          <h3>Resources</h3>
-
-          <a href="#!">About Us</a>
-          <a href="#!">Contact</a>
-          <a href="#!">Support</a>
-          <a href="#!">Privacy Policy</a>
-        </div>
-
-      </div>
-
-      <div className="footer-bottom">
-        <p>© 2026 EventHub. All rights reserved.</p>
       </div>
     </footer>
   );

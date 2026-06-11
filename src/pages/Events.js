@@ -8,6 +8,10 @@ function Events() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
+  // New Filter States
+  const [searchTerm, setSearchTerm] = useState("");
+  const [maxPrice, setMaxPrice] = useState(10000); // Default max price slider limit
+
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const selectedCategoryId = searchParams.get("categoryId");
@@ -40,6 +44,17 @@ function Events() {
     }
   };
 
+  // Filter Logic: Executed client-side instantly when inputs change
+  const filteredEvents = events.filter((event) => {
+    const matchesSearch = 
+      event.title?.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      event.venue?.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const matchesPrice = event.ticketPrice <= maxPrice;
+    
+    return matchesSearch && matchesPrice;
+  });
+
   if (loading) return <div className="events-loading">Loading Upcoming Events...</div>;
   if (error) return <div className="events-error">{error}</div>;
 
@@ -50,10 +65,35 @@ function Events() {
           ? `${events[0].categoryName} Events` 
           : "All Upcoming Events"}
       </h2>
+
+      {/* --- NEW FILTER BAR --- */}
+      <div className="events-filter-bar">
+        <input
+          type="text"
+          placeholder="🔍 Search by title or venue..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="filter-input"
+        />
+        
+        <div className="price-filter">
+          <label>Max Price: ₹{maxPrice}</label>
+          <input
+            type="range"
+            min="0"
+            max="10000"
+            step="500"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(Number(e.target.value))}
+            className="filter-slider"
+          />
+        </div>
+      </div>
+      {/* ------------------------ */}
       
       <div className="events-grid">
-        {events.length > 0 ? (
-          events.map((event) => (
+        {filteredEvents.length > 0 ? (
+          filteredEvents.map((event) => (
             <div key={event.id} className="event-card">
               {event.imageUrl && <img src={event.imageUrl} alt={event.title} className="event-img" />}
               
@@ -99,7 +139,7 @@ function Events() {
             </div>
           ))
         ) : (
-          <p className="no-events-msg">No active events found under this specific interest.</p>
+          <p className="no-events-msg">No active events found matching your criteria.</p>
         )}
       </div>
     </div>
