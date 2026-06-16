@@ -4,6 +4,7 @@ import "../styles/admin.css";
 
 const ContactList = () => {
   const [contacts, setContacts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     API.get('/api/contact/all')
@@ -14,8 +15,25 @@ const ContactList = () => {
       .catch(err => console.error("Error fetching contacts:", err));
   }, []);
 
+
+  const filteredContacts = contacts.filter(contact =>
+        contact.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        contact.message?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
   return (
+
     <div className="admin-page">
+
+      <div className="cat-toolbar">
+        <input
+          type="text"
+          placeholder="🔍 Search categories..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="cat-search-input"
+        />
+      </div>
       <h2>Contact Submissions</h2>
       <table className="brutalist-table">
         <thead>
@@ -26,7 +44,7 @@ const ContactList = () => {
           </tr>
         </thead>
         <tbody>
-          {contacts.map(c => (
+          {filteredContacts.map(c => (
             <tr key={c.id}>
               <td>{c.name}</td>
               <td>{c.email}</td>
